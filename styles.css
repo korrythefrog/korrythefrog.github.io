@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@font-face {
+    font-family: 'Kuta';
+    src: url('/fonts/kuta.woff2') format('woff2'),
+         url('/fonts/kuta.woff') format('woff'),
+         url('Kuta 2.otf') format('opentype');
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    background-color: #FFFFFD;
+    color: #333;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #FFFFFD;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-content {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    align-items: center;
+    width: 100%;
+}
+
+.hamburger {
+    grid-column: 2 / 3;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #333;
+}
+
+.logo {
+    grid-column: 5 / 6;
+    text-align: center;
+    font-family: "Kuta", sans-serif;
+    font-size: 35px;
+    font-weight: 100;
+}
+
+.social-icons {
+    grid-column: 9 / 10;
+    display: flex;
+    justify-content: center;
+}
+
+.social-icon {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+.main-content {
+    font-size: 18px;
+}
+
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #FF6347;
+    color: #333;
+    text-align: left;
+}
+
+.landing-page-content h2 {
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Inter', Arial, sans-serif;
+    margin-bottom: 10px;
+}
+
+.landing-page-content h1 {
+    font-size: 80px;
+    font-family: "Kuta", sans-serif;
+    margin-bottom: 20px;
+}
+
+.landing-page-content p {
+    font-size: 14px;
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: italic;
+    margin-bottom: 20px;
+    text-align: center;
+    text-align: bottom;
+}
+
+.arrow-down {
+    font-size: 20px;
+    color: #333;
+    align-items: center;
+}
+
+.about-me {
+    margin-top: 40px;
+    text-align: center;
+    margin-left:2%;
+    margin-right:2%;
+}
+
+.about-me h2 {
+    font-size: 40px;
+    font-family: "Kuta", sans-serif;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.about-me-image {
+    width: 80%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.about-me-description {
+    font-size: 16px;
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: italic;
+    text-align: left;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.work-experience {
+    margin-top: 60px;
+    margin-left:2%;
+    margin-right:2%;
+}
+
+.work-experience-subtitle {
+    font-size: 18px;
+    font-family: 'Inter', Arial, sans-serif;
+    text-align: left;
+}
+
+.work-experience-title {
+    font-family: "Kuta", sans-serif;
+    text-align: left;
+    font-size: 40px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.experience-card {
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: left;
+}
+
+.experience-company {
+    font-size: 16px;
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 400;
+    color:#676767;
+    text-transform: uppercase;
+    margin-bottom: 0.5px;
+}
+
+.experience-role {
+    font-size: 20px;
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.experience-description {
+    font-size: 18px;
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.experience-dates {
+    font-size: 14px;
+    font-family: 'Inter', Arial, sans-serif;
+    color: #676767;
+}
+
+.projects {
+    margin-top: 100px;
+}
+
+.projects-subtitle {
+    font-size: 18px;
+    font-family: 'Inter', Arial, sans-serif;
+    margin-left:2%;
+    margin-right:2%;
+    text-align: left;
+    color: #555;
+}
+
+.projects-title {
+    font-family: "Kuta", sans-serif;
+    text-align:left;
+    font-size: 40px;
+    display: block;
+    margin-bottom: 20px;
+    margin-left:2%;
+    margin-right:2%;
+}
+
+.projects-wheel {
+    display: flex;
+    overflow: hidden;
+    padding: 20px 0;
+    scroll-behavior: smooth;
+    position: relative;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project-card {
+    border-radius: 8px;
+    padding: 20px;
+    min-width: 300px;
+    max-width: 400px;
+    flex: 0 0 auto;
+    text-align: left;
+    position: relative;
+}
+
+.project-image {
+    width: 100%;
+    height: 200px;
+    background-color: #DDD;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.project-company {
+    font-size: 14px;
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.project-role {
+    font-size: 18px;
+    font-family: 'Inter', Arial, sans-serif;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.project-description {
+    font-size: 16px;
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.project-dates {
+    font-size: 14px;
+    font-family: 'Inter', Arial, sans-serif;
+    color: #555;
+}
+
+.footer {
+    background-color: #333;
+    color: #FFFFFD;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.footer h2 {
+    font-family: "Kuta", sans-serif;
+    font-weight: 200;
+    font-size: 40px;
+    margin: 0.5;
+}
+
+.footer p {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 14px;
+    margin: 5px 0;
+}

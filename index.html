@@ -4,8 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Emily Kim Personal Website</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
+    <style>
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #FF6347;
+            z-index: 2;
+            transition: left 0.3s ease;
+        }
+        .sidebar.active {
+            left: 0;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px;
+        }
+        .sidebar ul li {
+            margin: 15px 0;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #FFFFFD;
+            font-size: 18px;
+        }
+        .menu-open .sidebar {
+            left: 0;
+        }
+        .menu-open .main-content {
+            transform: translateX(250px);
+            transition: transform 0.3s ease;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -19,24 +55,35 @@
                 <h1>EHK</h1>
             </div>
             <div class="social-icons">
-                <a href="#" class="social-icon">Mail</a>
-                <a href="#" class="social-icon">Instagram</a>
-                <a href="#" class="social-icon">LinkedIn</a>
+                <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
     </nav>
+
+    <div class="sidebar" id="sidebar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Me</a></li>
+            <li><a href="#">Work Experience</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
     <div class="main-content">
         <div class="landing-page">
             <div class="landing-page-content">
                 <h2>Hello world! My name is</h2>
                 <h1>Emily Hayeon Kim</h1>
                 <p>Let's get to know each other :)</p>
-                <div class="arrow-down">&#9660;</div>
+                <div class="arrow-down">▼</div>
             </div>
         </div>
         <div class="about-me">
             <h2>About Me</h2>
-            <img src="profile.jpg" alt="Emily Kim" class="about-me-image">
+            <img src="Rectangle 13.png" alt="Emily Kim" class="about-me-image">
             <p class="about-me-description">
                 Nice to meet you, I'm Emily Kim and I'm a blank about school more words blank about school more words more words more words more words more words more words more words more words.
                 <br><br>
@@ -117,6 +164,20 @@
         <p>Made with lots of love + iced coffee.</p>
         <p>Copyright stuff</p>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const hamburgerMenu = document.getElementById("hamburger-menu");
+            const sidebar = document.getElementById("sidebar");
+            const mainContent = document.querySelector(".main-content");
+
+            // Hamburger menu toggle
+            hamburgerMenu.addEventListener("click", () => {
+                sidebar.classList.toggle("active");
+                mainContent.classList.toggle("menu-open");
+            });
+        });
+    </script>
 
 </body>
 </html>

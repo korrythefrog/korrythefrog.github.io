@@ -5,9 +5,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const landingPage = document.createElement("div");
 
     // Hamburger menu toggle
-    hamburgerMenu.addEventListener("click", () => {
+    hamburgerMenu.addEventListener("click", (e) => {
+        e.stopPropagation();
         mainContent.classList.toggle("menu-open");
         sidebar.classList.toggle("active");
+        hamburgerMenu.classList.toggle("active");
+    });
+
+    // Close sidebar when clicking outside
+    document.addEventListener("click", (e) => {
+        if (!sidebar.contains(e.target) && !hamburgerMenu.contains(e.target)) {
+            mainContent.classList.remove("menu-open");
+            sidebar.classList.remove("active");
+            hamburgerMenu.classList.remove("active");
+        }
     });
 
     // JavaScript for infinite wheel and centering projects
@@ -58,3 +69,4 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+

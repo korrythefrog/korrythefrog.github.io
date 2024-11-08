@@ -7,41 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Emily Kim Personal Website</title>
     <script src="script.js" defer></script>
-    <style>
-        .sidebar {
-            position: fixed;
-            top: 0;
-            left: -250px;
-            width: 250px;
-            height: 100%;
-            background-color: #FF6347;
-            z-index: 2;
-            transition: left 0.3s ease;
-        }
-        .sidebar.active {
-            left: 0;
-        }
-        .sidebar ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 20px;
-        }
-        .sidebar ul li {
-            margin: 15px 0;
-        }
-        .sidebar ul li a {
-            text-decoration: none;
-            color: #FFFFFD;
-            font-size: 18px;
-        }
-        .menu-open .sidebar {
-            left: 0;
-        }
-        .menu-open .main-content {
-            transform: translateX(250px);
-            transition: transform 0.3s ease;
-        }
-    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -52,23 +17,29 @@
                 <div class="bar"></div>
             </div>
             <div class="logo">
-                <h1>EHK</h1>
+                <a href="#main-content" class="logo-link">EHK</a>
             </div>
+            <!-- Navbar links for larger screens -->
+            <ul class="navbar-links">
+                <li><a href="#about-me">About Me</a></li>
+                <li><a href="#work-experience">Work Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
             <div class="social-icons">
                 <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
                 <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
                 <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
-    </nav>
+    </nav>    
 
     <div class="sidebar" id="sidebar">
         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Me</a></li>
-            <li><a href="#">Work Experience</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#about-me">About Me</a></li>
+            <li><a href="#work-experience">Work Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </div>
 
@@ -81,7 +52,7 @@
                 <div class="arrow-down">▼</div>
             </div>
         </div>
-        <div class="about-me">
+        <div class="about-me" id="about-me">
             <h2>About Me</h2>
             <img src="Rectangle 13.png" alt="Emily Kim" class="about-me-image">
             <p class="about-me-description">
@@ -94,7 +65,7 @@
                 Always happy to chat :)
             </p>
         </div>
-        <div class="work-experience">
+        <div class="work-experience" id="work-experience">
             <span class="work-experience-subtitle">My diverse pool of</span>
             <span class="work-experience-title">Work Experience</span>
             <div class="experience-card">
@@ -116,7 +87,7 @@
                 <p class="experience-dates">Date - Date</p>
             </div>
         </div>
-        <div class="projects">
+        <div class="projects" id="projects">
             <span class="projects-subtitle">A random pool of</span>
             <span class="projects-title">Projects</span>
             <div class="projects-wheel">
@@ -159,25 +130,20 @@
         </div>
     </div>
 
+    <div class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <p>I'd love to hear from you! Feel free to reach out through the following platforms:</p>
+        <div class="contact-info">
+            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:emilyhkim6@gmail.com">emilyhkim6@gmail.com</a></p>
+            <p><i class="fab fa-linkedin"></i> LinkedIn: <a href="https://www.linkedin.com/in/emilyhykim" target="_blank">linkedin.com/in/emilyhykim</a></p>
+            <p><i class="fab fa-instagram"></i> Instagram: <a href="https://www.instagram.com/emilyhkim" target="_blank">@emilyhkim</a></p>
+        </div>
+    </div>    
+
     <div class="footer">
         <h2>Emily Hayeon Kim</h2>
         <p>Made with lots of love + iced coffee.</p>
-        <p>Copyright stuff</p>
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const hamburgerMenu = document.getElementById("hamburger-menu");
-            const sidebar = document.getElementById("sidebar");
-            const mainContent = document.querySelector(".main-content");
-
-            // Hamburger menu toggle
-            hamburgerMenu.addEventListener("click", () => {
-                sidebar.classList.toggle("active");
-                mainContent.classList.toggle("menu-open");
-            });
-        });
-    </script>
-
+        <p>&copy; 2024 Emily Hayeon Kim. All rights reserved.</p>
+    </div>    
 </body>
 </html>

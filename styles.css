@@ -1,11 +1,77 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@font-face {
-    font-family: 'Kuta';
-    src: url('/fonts/kuta.woff2') format('woff2'),
-         url('/fonts/kuta.woff') format('woff'),
-         url('Kuta 2.otf') format('opentype');
+/* Sidebar styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #FF6347;
+    z-index: 2;
+    transition: left 0.3s ease;
+}
+.sidebar.active {
+    left: 0;
+}
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px;
+}
+.sidebar ul li {
+    margin: 15px 0;
+}
+.sidebar ul li a {
+    text-decoration: none;
+    color: #FFFFFD;
+    font-size: 18px;
+}
+.menu-open .sidebar {
+    left: 0;
+}
+.menu-open .main-content {
+    transform: translateX(250px);
+    transition: transform 0.3s ease;
 }
 
+/* Ensure hamburger is visible on smaller screens */
+.hamburger {
+    cursor: pointer;
+    display: block;
+    z-index: 3;
+    margin-left: 20px;
+}
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #333;
+}
+
+/* Responsive design for larger screens */
+@media (min-width: 769px) {
+    .sidebar {
+        display: none;
+    }
+    .hamburger {
+        display: none;
+    }
+    .navbar-content {
+        justify-content: space-between;
+    }
+}
+
+.logo-link {
+    text-decoration: none;
+    color: #333;
+    cursor: default;
+    font-size: 40px;
+}
+.logo-link:hover {
+    text-decoration: none; /* Ensure there's no underline on hover */
+}
+
+/* General body and main content styling */
 body {
     margin: 0;
     font-family: 'Inter', Arial, sans-serif;
@@ -18,10 +84,12 @@ body {
     top: 0;
     z-index: 1;
     background-color: #FFFFFD;
-    padding: 1px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    height: 60px; /* Adjust height for a more compact navbar */
+    padding: 5px 20px; /* Smaller padding for a compact look */
 }
 
 .navbar-content {
@@ -32,36 +100,58 @@ body {
     margin: 0 auto;
 }
 
-.hamburger {
+/* Navbar links styling for larger screens */
+.navbar-links {
     display: none;
-    cursor: pointer;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 20px;
+    display: flex;
+}
+.navbar-links li {
+    display: inline;
+}
+.navbar-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
 }
 
-.hamburger .bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    background-color: #333;
+/* Show navbar links on larger screens */
+@media (min-width: 769px) {
+    .hamburger {
+        display: none;
+    }
+    .navbar-links {
+        display: flex;
+    }
 }
+
 
 .logo {
     font-family: "Kuta", sans-serif;
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 100;
     line-height: 1.2;
+    margin: auto; /* Center the logo */
 }
 
 .social-icons {
     display: flex;
-    gap: 10px;
+    align-items: center;
+    gap: 15px;
 }
 
 .social-icon {
     text-decoration: none;
     color: #333;
-    font-size: 16px;
-    line-height: 1.2;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #FF6347; /* Adds a hover effect */
 }
 
 .main-content {
@@ -82,10 +172,11 @@ body {
 }
 
 .landing-page-content h2 {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 400;
     font-family: 'Inter', Arial, sans-serif;
-    margin-bottom: 10px;
+    margin-bottom: 1px;
+    margin-left: 10px;
     text-align: left;
 }
 
@@ -93,12 +184,12 @@ body {
     font-size: 80px;
     font-family: "Kuta", sans-serif;
     margin-bottom: 20px;
+    margin-left: 10px;
     text-align: left;
 }
 
 .landing-page-content p {
-    margin-top: 300px;
-    font-size: 12px;
+    font-size: 14px;
     font-family: 'Inter', Arial, sans-serif;
     font-style: italic;
     margin-bottom: 20px;
@@ -119,7 +210,6 @@ body {
     font-size: 30px;
     font-family: "Kuta", sans-serif;
     margin-bottom: 20px;
-    text-align: left;
 }
 
 .about-me-image {
@@ -146,7 +236,7 @@ body {
 }
 
 .work-experience-subtitle {
-    font-size: 14px;
+    font-size: 16px;
     font-family: 'Inter', Arial, sans-serif;
     text-align: left;
 }
@@ -160,7 +250,7 @@ body {
 }
 
 .experience-card {
-    border: 0.5px solid #333;
+    border: 1px solid #333;
     border-radius: 8px;
     padding: 20px;
     margin: 20px auto;
@@ -169,16 +259,16 @@ body {
 }
 
 .experience-company {
-    font-size: 14px;
+    font-size: 16px;
     font-family: 'Inter', Arial, sans-serif;
     font-weight: 400;
     color: #676767;
     text-transform: uppercase;
-    margin-bottom: 0.2px;
+    margin-bottom: 0.5px;
 }
 
 .experience-role {
-    font-size: 18px;
+    font-size: 20px;
     font-family: 'Inter', Arial, sans-serif;
     font-weight: 600;
     margin-bottom: 10px;
@@ -203,7 +293,7 @@ body {
 }
 
 .projects-subtitle {
-    font-size: 14px;
+    font-size: 16px;
     font-family: 'Inter', Arial, sans-serif;
     text-align: left;
     color: #555;
@@ -271,6 +361,50 @@ body {
     color: #555;
 }
 
+/* Contact Section */
+.contact {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.contact h2 {
+    font-family: "Kuta", sans-serif;
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    text-align: left;
+}
+
+.contact p {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.contact-info {
+    font-family: 'Inter', Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    text-align: left;
+    margin-left: 20px;
+}
+
+.contact-info p {
+    margin: 10px 0;
+}
+
+.contact-info a {
+    color: #FF6347;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
 .footer {
     background-color: #333;
     color: #FFFFFD;
@@ -290,34 +424,4 @@ body {
     font-family: 'Inter', Arial, sans-serif;
     font-size: 14px;
     margin: 5px 0;
-}
-
-@media (max-width: 768px) {
-    .landing-page-content h1 {
-        font-size: 36px;
-    }
-    .about-me h2, .work-experience-title, .projects-title {
-        font-size: 24px;
-    }
-    .experience-card, .project-card {
-        padding: 15px;
-    }
-    .navbar-content {
-        justify-content: space-between;
-    }
-    .hamburger {
-        display: block;
-    }
-    .social-icons {
-        display: none;
-    }
-    .navbar {
-        padding: 2px;
-    }
-}
-
-@media (min-width: 769px) {
-    .social-icons {
-        display: flex;
-    }
 }
